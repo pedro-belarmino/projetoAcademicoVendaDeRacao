@@ -1,0 +1,106 @@
+version: '3.8'
+
+services:
+  servico-catalogo:
+    build: ./ServicoCatalogo
+    ports:
+      - "8081:8080"
+    depends_on:
+      - mysql-catalogo
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://mysql-catalogo:3306/catalogodb
+      SPRING_DATASOURCE_USERNAME: root
+      SPRING_DATASOURCE_PASSWORD: root
+
+  servico-pagamento:
+    build: ./ServicoPagamento
+    ports:
+      - "8082:8080"
+    depends_on:
+      - mysql-pagamento
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://mysql-pagamento:3306/pagamentodb
+      SPRING_DATASOURCE_USERNAME: root
+      SPRING_DATASOURCE_PASSWORD: root
+
+  servico-pedidos:
+    build: ./ServicoPedidos
+    ports:
+      - "8083:8080"
+    depends_on:
+      - mysql-pedidos
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://mysql-pedidos:3306/pedidosdb
+      SPRING_DATASOURCE_USERNAME: root
+      SPRING_DATASOURCE_PASSWORD: root
+
+  servico-usuario:
+    build: ./ServicoUsuario
+    ports:
+      - "8084:8080"
+    depends_on:
+      - mysql-usuario
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://mysql-usuario:3306/usuariodb
+      SPRING_DATASOURCE_USERNAME: root
+      SPRING_DATASOURCE_PASSWORD: root
+
+  venda-front:
+    build: ./vendaDeRacaoFront
+    ports:
+      - "80:80"
+    depends_on:
+      - servico-catalogo
+      - servico-pagamento
+      - servico-pedidos
+      - servico-usuario
+
+  mysql-catalogo:
+    image: mysql:8
+    container_name: mysql_catalogo
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: catalogodb
+    ports:
+      - "3307:3306"
+    volumes:
+      - catalogo_data:/var/lib/mysql
+
+  mysql-pagamento:
+    image: mysql:8
+    container_name: mysql_pagamento
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: pagamentodb
+    ports:
+      - "3308:3306"
+    volumes:
+      - pagamento_data:/var/lib/mysql
+
+  mysql-pedidos:
+    image: mysql:8
+    container_name: mysql_pedidos
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: pedidosdb
+    ports:
+      - "3309:3306"
+    volumes:
+      - pedidos_data:/var/lib/mysql
+
+  mysql-usuario:
+    image: mysql:8
+    container_name: mysql_usuario
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: usuariodb
+    ports:
+      - "3310:3306"
+    volumes:
+      - usuario_data:/var/lib/mysql
+
+volumes:
+  catalogo_data:
+  pagamento_data:
+  pedidos_data:
+  usuario_data:

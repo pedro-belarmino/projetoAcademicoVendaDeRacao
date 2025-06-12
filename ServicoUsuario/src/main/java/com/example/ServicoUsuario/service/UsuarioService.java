@@ -3,6 +3,7 @@ package com.example.ServicoUsuario.service;
 import com.example.ServicoUsuario.model.Usuario;
 import com.example.ServicoUsuario.repository.UsuarioRepository;
 import org.springframework.stereotype.Service;
+import java.util.List; // Importação adicionada
 
 @Service
 public class UsuarioService {
@@ -20,5 +21,8 @@ public class UsuarioService {
     public Usuario login(String email, String senha) {
         return repository.findByEmailAndSenha(email, senha);
     }
-}
 
+    public List<Usuario> listarTodos() {
+        return repository.findAll();
+    }
+}

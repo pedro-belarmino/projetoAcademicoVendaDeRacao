@@ -1,5 +1,5 @@
-import UserForms from "../components/User/UserForms";
-import UserList from "../components/User/UserList";
+import UserForms from "../components/pages/User/UserForms";
+import UserList from "../components/pages//User/UserList";
 
 export default function User() {
 

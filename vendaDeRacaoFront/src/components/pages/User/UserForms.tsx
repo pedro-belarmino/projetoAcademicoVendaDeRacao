@@ -1,7 +1,7 @@
 import { Button, TextField } from "@mui/material";
 import axios from "axios";
 import { useState } from "react";
-import { USUARIO_URL } from "../../../shareUrl";
+import { USUARIO_URL } from "../../../../shareUrl";
 
 
 interface userType {
@@ -30,8 +30,10 @@ export default function UserForms() {
     }
 
     async function save() {
+        let url = `${USUARIO_URL}/usuarios/cadastrar`
+        console.log('salvar')
         try {
-            const response = await axios.post(USUARIO_URL,
+            const response = await axios.post(url,
                 {
                     nome: user.name,
                     email: user.email,
@@ -48,7 +50,7 @@ export default function UserForms() {
     return (
         <div className="border p-5 m-5 rounded-xl space-y-5">
 
-            <p>Usuário</p>
+            <p>Usuário</p>dad
 
             <div className="flex flex-col space-y-5">
                 <div>

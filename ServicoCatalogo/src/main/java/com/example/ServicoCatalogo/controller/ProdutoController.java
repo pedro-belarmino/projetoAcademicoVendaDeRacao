@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
+@CrossOrigin
 @RequestMapping("/produtos")
 public class ProdutoController {
 
@@ -31,4 +32,3 @@ public class ProdutoController {
         return service.buscarPorId(id);
     }
 }
-

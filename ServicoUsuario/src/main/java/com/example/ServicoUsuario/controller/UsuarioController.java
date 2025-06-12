@@ -3,8 +3,10 @@ package com.example.ServicoUsuario.controller;
 import com.example.ServicoUsuario.model.Usuario;
 import com.example.ServicoUsuario.service.UsuarioService;
 import org.springframework.web.bind.annotation.*;
+import java.util.List;
 
 @RestController
+@CrossOrigin
 @RequestMapping("/usuarios")
 public class UsuarioController {
 
@@ -23,5 +25,9 @@ public class UsuarioController {
     public Usuario login(@RequestBody Usuario u) {
         return service.login(u.getEmail(), u.getSenha());
     }
-}
 
+    @GetMapping("/listar")
+    public List<Usuario> listarTodos() {
+        return service.listarTodos();
+    }
+}
