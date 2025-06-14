@@ -41,7 +41,7 @@ Pedidos: http://localhost:8083/swagger-ui.html
 Pagamento: http://localhost:8084/swagger-ui.html
 
 ## Execução com Docker
-É necessário ter Docker e Docker Compose instalados.
+**É necessário ter Docker e Docker Compose instalados.**
 
 • Clone o repositório do projeto.
 
