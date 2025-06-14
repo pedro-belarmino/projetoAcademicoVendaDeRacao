@@ -10,14 +10,19 @@ pedidos e acompanhem suas compras.
 ## Estrutura do Projeto
 
 **1. Microserviços (Java Spring Boot):**
+
 • Serviço de Catálogo de Produtos: gerenciamento de rações (nome, tipo, descrição,
 peso, preço, disponibilidade).
+
 • Serviço de Usuário: cadastro, login e gerenciamento de clientes.
+
 • Serviço de Pedidos: criação e consulta de pedidos, vinculação com usuários e produtos.
+
 • Serviço de Pagamento (simulado): simulação do processamento de pagamento com
 status de confirmação ou falha.
 
 **2. Front-end (React):**
+
 • Tela de login e cadastro de usuários.
 
 • Página principal com listagem de rações disponíveis.
@@ -38,11 +43,11 @@ Pagamento: http://localhost:8084/swagger-ui.html
 ## Execução com Docker
 É necessário ter Docker e Docker Compose instalados.
 
-Clone o repositório do projeto.
+• Clone o repositório do projeto.
 
-Navegue até o diretório do projeto.
+• Navegue até o diretório do projeto.
 
-Execute o comando docker-compose up --build
+•Execute o comando docker-compose up --build
 
-##Diagrama da arquitetura geral
+## Diagrama da arquitetura geral
 ![image](https://github.com/user-attachments/assets/41b23d4a-b1b7-435a-9eeb-3b1893752f8d)
