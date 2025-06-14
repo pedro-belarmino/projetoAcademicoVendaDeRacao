@@ -23,7 +23,7 @@ status de confirmação ou falha.
 • Tela de detalhamento do produto.
 • Funcionalidade de adicionar ao carrinho e finalizar pedido.
 
-##Documentação das APIs - Swagger
+## Documentação das APIs - Swagger
 Catálogo: http://localhost:8081/swagger-ui.html
 
 Usuário: http://localhost:8082/swagger-ui.html
@@ -32,7 +32,7 @@ Pedidos: http://localhost:8083/swagger-ui.html
 
 Pagamento: http://localhost:8084/swagger-ui.html
 
-##Execução com Docker
+## Execução com Docker
 É necessário ter Docker e Docker Compose instalados.
 
 Clone o repositório do projeto.
