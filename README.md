@@ -19,8 +19,11 @@ status de confirmação ou falha.
 
 **2. Front-end (React):**
 • Tela de login e cadastro de usuários.
+
 • Página principal com listagem de rações disponíveis.
+
 • Tela de detalhamento do produto.
+
 • Funcionalidade de adicionar ao carrinho e finalizar pedido.
 
 ## Documentação das APIs - Swagger
@@ -36,7 +39,9 @@ Pagamento: http://localhost:8084/swagger-ui.html
 É necessário ter Docker e Docker Compose instalados.
 
 Clone o repositório do projeto.
+
 Navegue até o diretório do projeto.
+
 Execute o comando docker-compose up --build
 
 ##Diagrama da arquitetura geral
