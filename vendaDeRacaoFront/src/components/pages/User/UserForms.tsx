@@ -50,7 +50,7 @@ export default function UserForms() {
     return (
         <div className="border p-5 m-5 rounded-xl space-y-5">
 
-            <p>Usuário</p>dad
+            <p>Usuário</p>
 
             <div className="flex flex-col space-y-5">
                 <div>
